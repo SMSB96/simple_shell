@@ -16,5 +16,7 @@ shell.h
 #include <fcntl.h>
 #include <ctype.h>
 
-#define MAX_CMD_LEN 100
+
 char *read_line(void);
+
+#endif /* SHELL_H */
