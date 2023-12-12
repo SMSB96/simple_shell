@@ -27,6 +27,6 @@ int _strlen(char *s);
 char *_strcat(char *dest, char *src);
 char *_strcpy(char *dest, char *src);
 
-void freearray2D(char **arr);
+void free_2d_array(char **array);
 
 #endif /* SHELL_H */
