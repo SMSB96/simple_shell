@@ -7,17 +7,17 @@
  */
 void free_2d_array(char **array)
 {
-    int i;
+	int i;
 
-    if (!array)
-        return;
+	if (!array)
+	return;
 
-    for (i = 0; array[i]; i++)
-    {
-        free(array[i]);
-        array[i] = NULL;
-    }
+	for (i = 0; array[i]; i++)
+	{
+		free(array[i]);
+		array[i] = NULL;
+	}
 
-    free(array);
-    array = NULL;
+	free(array);
+	array = NULL;
 }

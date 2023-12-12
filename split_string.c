@@ -6,31 +6,32 @@
  * @str: The string to duplicate.
  *
  * Return: A pointer to the duplicated string or NULL on failure.
- */
+*/
+
 char *_strdup(const char *str)
 {
-    char *ptr;
-    int i, len = 0;
+	char *ptr;
+	int i, len = 0;
 
-    if (str == NULL)
-        return (NULL);
+	if (str == NULL)
+		return (NULL);
 
-    while (*str != '\0')
-    {
-        len++;
-        str++;
-    }
+	while (*str != '\0')
+	{
+		len++;
+		str++;
+	}
 
-    str = str - len;
-    ptr = malloc(sizeof(char) * (len + 1));
+	str = str - len;
+	ptr = malloc(sizeof(char) * (len + 1));
 
-    if (ptr == NULL)
-        return (NULL);
+	if (ptr == NULL)
+		return (NULL);
 
-    for (i = 0; i <= len; i++)
-        ptr[i] = str[i];
+	for (i = 0; i <= len; i++)
+		ptr[i] = str[i];
 
-    return (ptr);
+	return (ptr);
 }
 
 /**
@@ -45,20 +46,21 @@ char *_strdup(const char *str)
  */
 int _strcmp(char *s1, char *s2)
 {
-    int cmp;
-    cmp = (int)*s1 - (int)*s2;
+	int cmp;
 
-    while (*s1)
-    {
-        if (*s1 != *s2)
-            break;
+	cmp = (int)*s1 - (int)*s2;
 
-        s1++;
-        s2++;
-        cmp = (int)*s1 - (int)*s2;
-    }
+	while (*s1)
+	{
+		if (*s1 != *s2)
+			break;
 
-    return (cmp);
+		s1++;
+		s2++;
+		cmp = (int)*s1 - (int)*s2;
+	}
+
+	return (cmp);
 }
 
 /**
@@ -70,12 +72,12 @@ int _strcmp(char *s1, char *s2)
  */
 int _strlen(char *s)
 {
-    int len = 0;
+	int len = 0;
 
-    while (s[len])
-        len++;
+	while (s[len])
+		len++;
 
-    return (len);
+	return (len);
 }
 
 /**
@@ -88,20 +90,20 @@ int _strlen(char *s)
  */
 char *_strcat(char *dest, char *src)
 {
-    char *p = dest;
+	char *p = dest;
 
-    while (*p)
-        p++;
+	while (*p)
+		p++;
 
-    while (*src)
-    {
-        *p = *src;
-        p++;
-        src++;
-    }
+	while (*src)
+	{
+		*p = *src;
+		p++;
+		src++;
+	}
 
-    *p = *src;
-    return (dest);
+	*p = *src;
+	return (dest);
 }
 
 /**
@@ -114,16 +116,16 @@ char *_strcat(char *dest, char *src)
  */
 char *_strcpy(char *dest, char *src)
 {
-    int i = 0;
+	int i = 0;
 
-    while (src[i])
-    {
-        dest[i] = src[i];
-        i++;
-    }
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
 
-    dest[i] = '\0';
+	dest[i] = '\0';
 
-    return (dest);
+	return (dest);
 }
 

@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * read_user_input - Read user input from stdin.
+ * read_line - Read line from stdin.
  *
  * Return: The user input as a string or NULL on error.
  */
@@ -15,10 +15,9 @@ char *read_line(void)
 	bytes = getline(&input, &buffer_size, stdin);
 	if (bytes == -1)
 	{
-		
 		free(input);
 		return (NULL);
-	} 
-	
+	}
+
 	return (input);
 }
