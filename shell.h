@@ -16,9 +16,9 @@
 #define MAX_CMD_LEN 100
 #define DELIM " \t\n"
 extern char **environ;
-char *read_user_input(void);
-char **tokenizer(char *line);
-int _execute(char **command, char **argv)
+char *read_line(void);
+char **tokenize_line(char *line);
+int execute_command(char **cmd, char **args);
 
 
 char *_strdup( const char *str);

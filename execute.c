@@ -10,8 +10,10 @@
  */
 int execute_command(char **cmd, char **args)
 {
-    pid_t child_pid;
-    int status;
+    
+	pid_t child_pid;
+	int status;
+	extern char **environ;
 
     child_pid = fork();
 
@@ -20,14 +22,14 @@ int execute_command(char **cmd, char **args)
         if (execve(cmd[0], cmd, environ) == -1)
         {
             perror(args[0]);
-            freearray2D(cmd);
+            free_2d_array(cmd);
             exit(100);
         }
     }
     else
     {
         waitpid(child_pid, &status, 0);
-        freearray2D(cmd);
+        free_2d_array(cmd);
     }
 
     return WEXITSTATUS(status);

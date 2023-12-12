@@ -5,7 +5,7 @@
  *
  * Return: The user input as a string or NULL on error.
  */
-char *read_user_input(void)
+char *read_line(void)
 {
 	ssize_t bytes;
 	char *input = NULL;

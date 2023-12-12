@@ -21,4 +21,3 @@ void free_2d_array(char **array)
     free(array);
     array = NULL;
 }
-
