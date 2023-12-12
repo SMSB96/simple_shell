@@ -106,7 +106,7 @@ char **tokenize_line(char *line)
 	if (copy_tokens(line, command) == -1)
 	{
 
-		free_tokens(command);
+		free_2d_array(command);
 		return (NULL);
 	}
 

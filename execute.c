@@ -13,7 +13,6 @@ int execute_command(char **cmd, char **args)
 
 	pid_t child_pid;
 	int status;
-	char **environ;
 
 	child_pid = fork();
 
