@@ -1,23 +1,24 @@
 #include "shell.h"
 
 /**
- * read_line - Read user input from stdin.
+ * read_user_input - Read user input from stdin.
  *
- * Return: The line as a string or NULL on error.
+ * Return: The user input as a string or NULL on error.
  */
-char *read_line(void)
+char *read_user_input(void)
 {
-	ssize_t len = 0;
-	char *line = NULL;
-	size_t n;
+	ssize_t bytes;
+	char *input = NULL;
+	size_t buffer_size = 0;
+
 	write(STDOUT_FILENO, "$ ", 2);
-	n = getline(&line, &len, stdin);
-	if (n == -1)
+	bytes = getline(&input, &buffer_size, stdin);
+	if (bytes == -1)
 	{
 		
 		free(input);
 		return (NULL);
 	} 
 	
-	return (line);
+	return (input);
 }
