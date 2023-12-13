@@ -21,7 +21,7 @@ char **tokenize_line(char *line);
 int execute_command(char **cmd, char **args);
 
 
-char *_strdup( const char *str);
+char *_strdup(const char *str);
 int _strcmp(char *s1, char *s2);
 int _strlen(char *s);
 char *_strcat(char *dest, char *src);
