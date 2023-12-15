@@ -15,7 +15,8 @@
 
 
 extern char **environ;
-
+char *name;
+int hist;
 
 /**
  * struct builtin_s - A new struct type defining builtin commands.
