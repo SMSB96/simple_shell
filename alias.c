@@ -5,15 +5,15 @@ void set_alias(char *var_name, char *value);
 void print_alias(alias_t *alias);
 
 /**
- * set_alias - Will either set an existing alias 'name' with a new value,
- * 'value' or creates a new alias with 'name' and 'value'.
+ * set_alias - Modifies an existing alias 'var_name' with a new 'value' or
+ * creates a new alias with 'var_name' and 'value'.
  * @var_name: Name of the alias.
- * @value: Value of the alias. First character is a '='.
+ * @value: Value of the alias. The first character is '='.
  */
 void set_alias(char *var_name, char *value)
 {
 	alias_t *temp = aliases;
-	int len, j, k;
+	int len, k, j;
 	char *new_value;
 
 	*value = '\0';
