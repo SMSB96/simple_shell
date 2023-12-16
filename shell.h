@@ -1,5 +1,8 @@
 #ifndef _SHELL_H_
 #define _SHELL_H_
+#include <ctype.h>
+#include <stdbool.h>
+#include <sys/wait.h>
 #include <fcntl.h>
 #include <signal.h>
 #include <sys/types.h>
@@ -19,9 +22,9 @@ char *name;
 int hist;
 
 /**
- * struct builtin_s - A new struct type defining builtin commands.
- * @name: The name of the builtin command.
- * @f: A function pointer to the builtin command's function.
+ * struct builtin_s - Structure defining built-in commands.
+ * @name: The name of the built-in command.
+ * @f: A function pointer to the built-in command's function.
  */
 typedef struct builtin_s
 {
@@ -56,8 +59,9 @@ typedef struct alias_s
 }
 alias_t;
 
-/* Global aliases linked list */
+
 alias_t *aliases;
+
 /* Input Helpers */
 void handle_line(char **line, ssize_t read);
 void variable_replacement(char **args, int *exe_ret);

@@ -3,11 +3,11 @@
 void sig_handler(int sig);
 int execute(char **args, char **front);
 /**
- * main - Runs a simple UNIX command interpreter.
- * @argc: The number of arguments supplied to the program.
+ * main - Executes a basic UNIX command interpreter.
+ * @argc: Represents the count of arguments passed to the program.
  * @argv: An array of pointers to the arguments.
  *
- * Return: The return value of the last executed command.
+ * Return: The exit status of the most recently executed command.
  */
 int main(int argc, char *argv[])
 {
@@ -61,8 +61,8 @@ int main(int argc, char *argv[])
 	return (*exe_ret);
 }
 /**
- * sig_handler - Prints a new prompt upon a signal.
- * @sig: The signal.
+ * sig_handler - Displays a fresh prompt when a signal is received.
+ * @sig: The signal received.
  */
 void sig_handler(int sig)
 {
@@ -74,12 +74,12 @@ void sig_handler(int sig)
 }
 
 /**
- * execute - Executes a command in a child process.
+ * execute - Runs a command in a child process.
  * @args: An array of arguments.
- * @front: A double pointer to the beginning of args.
+ * @front: A double pointer to the start of args.
  *
- * Return: If an error occurs - a corresponding error code.
- *         O/w - The exit value of the last executed command.
+ * Return: If an error occurs, the corresponding error code.
+ *         Otherwise, the exit value of the most recent command.
  */
 int execute(char **args, char **front)
 {
